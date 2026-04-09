@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Early Access - Fintra</title>
+  <meta name="description" content="Get early access to Fintra, the AI-native financial OS for SMBs. Request a demo or join the waitlist.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%230A2540'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%2300C48C' font-weight='bold'>F</text></svg>">
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none"><rect rx="8" width="36" height="36" fill="#0A2540"/><path d="M10 26V10h14v3.5H14v4h8v3.5h-8v5H10z" fill="#00C48C"/></svg>
+        Fintra<span class="logo-dot">.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="problem.html">The Problem</a></li>
+        <li><a href="solution.html">Solution</a></li>
+        <li><a href="differentiator.html">Why Fintra</a></li>
+        <li><a href="market.html">Market</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html" class="nav-cta active">Get Early Access</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Connect
+          </div>
+          <h2>Ready to Replace<br><span class="gradient-text">Your Financial Stack?</span></h2>
+          <p>Get early access to Fintra or request a personalized demo. We are building the future of SMB finance.</p>
+        </div>
+
+        <div class="form-grid">
+
+          <!-- Demo Request Form -->
+          <div class="form-section reveal">
+            <h3>Request a Demo</h3>
+            <p class="form-desc">See Fintra in action. We will walk you through the platform and answer your questions.</p>
+            <form id="demo-form">
+              <div class="form-group">
+                <label for="demo-name">Full Name</label>
+                <input type="text" id="demo-name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="demo-email">Work Email</label>
+                <input type="email" id="demo-email" name="email" placeholder="you@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="demo-company">Company Name</label>
+                <input type="text" id="demo-company" name="company" placeholder="Your company">
+              </div>
+              <div class="form-group">
+                <label for="demo-industry">Industry</label>
+                <select id="demo-industry" name="industry">
+                  <option value="">Select your industry</option>
+                  <option value="healthcare">Healthcare Practices</option>
+                  <option value="construction">Construction and Trades</option>
+                  <option value="restaurant">Restaurants</option>
+                  <option value="professional-services">Professional Services</option>
+                  <option value="ecommerce">Ecommerce and Retail</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="demo-size">Company Size</label>
+                <select id="demo-size" name="company_size">
+                  <option value="">Select size</option>
+                  <option value="1-10">1-10 employees</option>
+                  <option value="11-50">11-50 employees</option>
+                  <option value="51-200">51-200 employees</option>
+                  <option value="200+">200+ employees</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="demo-tools">Current Finance Tools</label>
+                <input type="text" id="demo-tools" name="current_tools" placeholder="e.g. QuickBooks, Gusto, spreadsheets">
+              </div>
+              <div class="form-group">
+                <label for="demo-message">What challenges are you facing?</label>
+                <textarea id="demo-message" name="message" placeholder="Tell us about your current financial workflow pain points..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Request Demo
+              </button>
+            </form>
+            <div class="form-success">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3>Demo Requested!</h3>
+              <p>Thank you for your interest. We will reach out within 24 hours to schedule your personalized demo.</p>
+            </div>
+          </div>
+
+          <!-- Early Access / Waitlist Form -->
+          <div class="form-section reveal">
+            <h3>Join the Waitlist</h3>
+            <p class="form-desc">Be among the first to access Fintra when we launch. Early users get special pricing.</p>
+            <form id="waitlist-form">
+              <div class="form-group">
+                <label for="wait-name">Full Name</label>
+                <input type="text" id="wait-name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="wait-email">Email</label>
+                <input type="email" id="wait-email" name="email" placeholder="you@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="wait-industry">Industry</label>
+                <select id="wait-industry" name="industry">
+                  <option value="">Select your industry</option>
+                  <option value="healthcare">Healthcare Practices</option>
+                  <option value="construction">Construction and Trades</option>
+                  <option value="restaurant">Restaurants</option>
+                  <option value="professional-services">Professional Services</option>
+                  <option value="ecommerce">Ecommerce and Retail</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="wait-features">Which features interest you most?</label>
+                <select id="wait-features" name="top_feature">
+                  <option value="">Select a feature</option>
+                  <option value="accounting">Accounting and Bookkeeping</option>
+                  <option value="payroll">Payroll and HR</option>
+                  <option value="budgeting">AI Budgeting and Forecasting</option>
+                  <option value="tax">Tax Compliance</option>
+                  <option value="copilot">AI Finance Copilot</option>
+                  <option value="all">All of the above</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="wait-pain">Top pain point with current tools</label>
+                <select id="wait-pain" name="pain_point">
+                  <option value="">Select a pain point</option>
+                  <option value="fragmentation">Too many disconnected tools</option>
+                  <option value="cost">Rising subscription costs</option>
+                  <option value="manual">Too much manual work</option>
+                  <option value="visibility">No real-time financial visibility</option>
+                  <option value="compliance">Compliance and tax errors</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="wait-budget">Monthly budget for finance tools</label>
+                <select id="wait-budget" name="budget">
+                  <option value="">Select range</option>
+                  <option value="under-50">Under $50/mo</option>
+                  <option value="50-100">$50-100/mo</option>
+                  <option value="100-250">$100-250/mo</option>
+                  <option value="250+">$250+/mo</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-accent" style="width: 100%; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Join Waitlist
+              </button>
+            </form>
+            <div class="form-success">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3>You are on the list!</h3>
+              <p>We will notify you as soon as early access opens. Early users receive special pricing.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">Fintra<span class="logo-dot">.</span></a>
+        <p>The AI-native financial operating system for small and medium businesses.</p>
+      </div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="solution.html">Solution</a></li><li><a href="differentiator.html">Why Fintra</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="market.html">Market</a></li><li><a href="problem.html">The Problem</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="contact.html">Get Early Access</a></li><li><a href="contact.html">Request Demo</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Fintra. All rights reserved.</span>
+      <span>UT Dallas Capstone Project</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../js/three-scene.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

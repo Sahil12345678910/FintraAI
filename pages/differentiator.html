@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Fintra - Differentiator</title>
+  <meta name="description" content="See how Fintra stands alone as the only AI-native, full-suite financial platform built for SMBs.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%230A2540'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%2300C48C' font-weight='bold'>F</text></svg>">
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none"><rect rx="8" width="36" height="36" fill="#0A2540"/><path d="M10 26V10h14v3.5H14v4h8v3.5h-8v5H10z" fill="#00C48C"/></svg>
+        Fintra<span class="logo-dot">.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="problem.html">The Problem</a></li>
+        <li><a href="solution.html">Solution</a></li>
+        <li><a href="differentiator.html" class="active">Why Fintra</a></li>
+        <li><a href="market.html">Market</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Early Access</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- Positioning Statement -->
+    <section class="section" style="min-height: auto; padding-top: 6rem; padding-bottom: 2rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Why Fintra
+          </div>
+          <h2>The Only AI-Native,<br><span class="gradient-text">Full-Suite SMB Platform</span></h2>
+          <p>Every competitor either offers narrow, single-function tools or enterprise solutions that are not built for small businesses. Fintra is the only platform that combines comprehensive financial workflows with AI built into the core.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitive Positioning Map -->
+    <section class="section" style="min-height: auto; padding-top: 0;">
+      <div class="container">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;" class="reveal">Competitive Positioning Map</h3>
+        <div class="positioning-map reveal">
+          <div class="map-grid">
+            <!-- Top-Left: High AI, Narrow Scope -->
+            <div class="map-quadrant">
+              <div class="map-quadrant-label">High AI / Narrow Scope</div>
+              <p style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.5rem;">Smart but limited</p>
+            </div>
+            <!-- Top-Right: High AI, Broad Scope -->
+            <div class="map-quadrant highlight">
+              <div class="map-quadrant-label">High AI / Broad Scope</div>
+              <div class="map-competitor fintra">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Fintra
+              </div>
+              <p style="font-size: 0.75rem; color: var(--secondary); font-weight: 600; margin-top: 0.5rem;">Only AI-native, full-suite SMB platform</p>
+            </div>
+            <!-- Bottom-Left: Low AI, Narrow Scope -->
+            <div class="map-quadrant">
+              <div class="map-quadrant-label">Low AI / Narrow Scope</div>
+              <div>
+                <span class="map-competitor other">Gusto</span>
+                <span class="map-competitor other">ADP</span>
+                <span class="map-competitor other">Avalara</span>
+              </div>
+            </div>
+            <!-- Bottom-Right: Low AI, Broad Scope -->
+            <div class="map-quadrant">
+              <div class="map-quadrant-label">Low AI / Broad Scope</div>
+              <div>
+                <span class="map-competitor other">QuickBooks</span>
+                <span class="map-competitor other">NetSuite</span>
+                <span class="map-competitor other">Xero</span>
+              </div>
+            </div>
+          </div>
+          <div class="map-axes">
+            <div class="map-axis-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Single Function to Multi-Function
+            </div>
+            <div class="map-axis-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M8 6a4 4 0 0 1 8 0"/></svg>
+              Manual to AI-Driven
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Comparison Matrix -->
+    <section class="section" style="min-height: auto; padding-top: 0;">
+      <div class="container">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;" class="reveal">Feature Comparison</h3>
+        <div class="reveal" style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="fintra-col">Fintra</th>
+                <th>QuickBooks</th>
+                <th>Gusto</th>
+                <th>ADP</th>
+                <th>Avalara</th>
+                <th>NetSuite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Accounting</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>AI-Based Budgeting</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="partial">~</span></td>
+              </tr>
+              <tr>
+                <td>Payroll</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="partial">~</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>HR Support</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="partial">~</span></td>
+              </tr>
+              <tr>
+                <td>Sales Tax Compliance</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="partial">~</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="check">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Sales Commission Mgmt</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="partial">~</span></td>
+              </tr>
+              <tr>
+                <td>Expense Reporting</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="partial">~</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>AI Natural Language Queries</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td>Built for SMBs</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="partial">~</span></td>
+                <td><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td>Unified Single Platform</td>
+                <td class="fintra-col"><span class="check">&#10003;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="cross">&#10005;</span></td>
+                <td><span class="check">&#10003;</span></td>
+              </tr>
+              <tr style="font-weight: 700;">
+                <td>Price</td>
+                <td class="fintra-col" style="color: var(--secondary); font-weight: 700;">From $33/mo</td>
+                <td>$30/mo</td>
+                <td>$40/mo</td>
+                <td>Custom</td>
+                <td>$50/mo</td>
+                <td>~$999/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: var(--text-light); margin-top: 1rem;">
+          <span class="check" style="color: var(--secondary);">&#10003;</span> Full Support &nbsp;&nbsp;
+          <span class="partial" style="color: var(--gold);">~</span> Limited/Add-on &nbsp;&nbsp;
+          <span class="cross" style="color: #E63946;">&#10005;</span> Not Available
+        </p>
+      </div>
+    </section>
+
+    <!-- Head-to-Head Competitor Breakdowns -->
+    <section class="section" style="min-height: auto; padding-top: 0;">
+      <div class="container">
+        <h3 style="text-align: center; margin-bottom: 1.5rem;" class="reveal">Head-to-Head Breakdown</h3>
+        <div class="diff-grid">
+
+          <div class="diff-card reveal">
+            <div class="diff-vs">
+              <span class="vs-badge">Fintra vs</span>
+              <span class="competitor-name">QuickBooks</span>
+            </div>
+            <ul class="diff-points">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                AI-native vs. bolted-on AI features
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Unified platform vs. costly add-ons for payroll, tax, reporting
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Real-time budgeting vs. spreadsheet dependency
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span style="color: var(--text-light);">QB: widely trusted brand, massive ecosystem</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="diff-card reveal">
+            <div class="diff-vs">
+              <span class="vs-badge">Fintra vs</span>
+              <span class="competitor-name">Gusto</span>
+            </div>
+            <ul class="diff-points">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Full financial suite vs. payroll and HR only
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                AI budgeting, accounting, tax included
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                One platform eliminates integration complexity
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span style="color: var(--text-light);">Gusto: easy to use, strong HR focus</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="diff-card reveal">
+            <div class="diff-vs">
+              <span class="vs-badge">Fintra vs</span>
+              <span class="competitor-name">ADP</span>
+            </div>
+            <ul class="diff-points">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                SMB-focused vs. enterprise-first design
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Transparent pricing vs. custom/opaque quotes
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                AI-powered insights vs. traditional processing
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span style="color: var(--text-light);">ADP: trusted brand, decades of payroll expertise</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="diff-card reveal">
+            <div class="diff-vs">
+              <span class="vs-badge">Fintra vs</span>
+              <span class="competitor-name">Avalara</span>
+            </div>
+            <ul class="diff-points">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Tax compliance included in full suite, not a standalone tool
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                No need for separate accounting or payroll tool
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Bundled pricing vs. tax-only subscription
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span style="color: var(--text-light);">Avalara: best-in-class sales tax engine</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="diff-card reveal">
+            <div class="diff-vs">
+              <span class="vs-badge">Fintra vs</span>
+              <span class="competitor-name">NetSuite</span>
+            </div>
+            <ul class="diff-points">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Built for SMBs vs. enterprise ERP scaled down
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                From $33/mo vs. ~$999/mo starting price
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Quick onboarding vs. months of implementation
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span style="color: var(--text-light);">NetSuite: most comprehensive enterprise feature set</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="diff-card reveal">
+            <div class="diff-vs">
+              <span class="vs-badge">Fintra vs</span>
+              <span class="competitor-name">AI Bookkeepers (Pilot, Digits)</span>
+            </div>
+            <ul class="diff-points">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Full financial OS vs. bookkeeping-only focus
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Payroll, tax, compliance, budgeting all included
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C48C" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Lower price point ($33/mo vs. $65-$300+/mo)
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span style="color: var(--text-light);">Pilot/Digits: deeper bookkeeping-specific AI</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Differentiators Summary -->
+    <section class="section" style="min-height: auto; padding-top: 0; padding-bottom: 4rem;">
+      <div class="container">
+        <div class="reveal" style="background: var(--gradient-2); border-radius: var(--radius-xl); padding: 3rem; color: #fff; text-align: center;">
+          <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.5rem;">The Gap in the Market</h3>
+          <p style="color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto 2rem; font-size: 1.05rem;">Tools like Gusto, ADP, and Avalara are narrow and single-function with little AI. QuickBooks lacks meaningful AI integration. NetSuite is broad but enterprise-priced. Fintra stands alone: combining a wide range of financial workflows with a fully AI-native platform built for SMBs.</p>
+          <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.12); border-radius: 12px; padding: 1.2rem 1.8rem;">
+              <div style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading);">1</div>
+              <div style="font-size: 0.85rem; opacity: 0.9;">Platform, not 5-7</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.12); border-radius: 12px; padding: 1.2rem 1.8rem;">
+              <div style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading);">AI</div>
+              <div style="font-size: 0.85rem; opacity: 0.9;">Native, not bolted on</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.12); border-radius: 12px; padding: 1.2rem 1.8rem;">
+              <div style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading);">SMB</div>
+              <div style="font-size: 0.85rem; opacity: 0.9;">Purpose-built</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.12); border-radius: 12px; padding: 1.2rem 1.8rem;">
+              <div style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading);">$33</div>
+              <div style="font-size: 0.85rem; opacity: 0.9;">/mo starting price</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">Fintra<span class="logo-dot">.</span></a>
+        <p>The AI-native financial operating system for small and medium businesses.</p>
+      </div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="solution.html">Solution</a></li><li><a href="differentiator.html">Why Fintra</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="market.html">Market</a></li><li><a href="problem.html">The Problem</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="contact.html">Get Early Access</a></li><li><a href="contact.html">Request Demo</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Fintra. All rights reserved.</span>
+      <span>UT Dallas Capstone Project</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../js/three-scene.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

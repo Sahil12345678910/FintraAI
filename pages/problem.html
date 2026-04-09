@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Problem - Fintra</title>
+  <meta name="description" content="SMBs juggle 5-7 fragmented financial tools, wasting time and money. Fintra solves this.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%230A2540'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%2300C48C' font-weight='bold'>F</text></svg>">
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none"><rect rx="8" width="36" height="36" fill="#0A2540"/><path d="M10 26V10h14v3.5H14v4h8v3.5h-8v5H10z" fill="#00C48C"/></svg>
+        Fintra<span class="logo-dot">.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="problem.html" class="active">The Problem</a></li>
+        <li><a href="solution.html">Solution</a></li>
+        <li><a href="differentiator.html">Why Fintra</a></li>
+        <li><a href="market.html">Market</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Early Access</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            The Problem
+          </div>
+          <h2>The SMB Financial Stack<br><span class="gradient-text-2">Is Broken</span></h2>
+          <p>Small businesses are forced to juggle 5-7 disconnected financial tools just to run basic operations. The result? Wasted time, costly errors, and zero visibility.</p>
+        </div>
+
+        <!-- Tool Sprawl Visualization -->
+        <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+          <h3 style="margin-bottom: 1.5rem; color: var(--primary);">The Typical SMB Finance Stack</h3>
+          <div class="tool-sprawl">
+            <span class="tool-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              QuickBooks
+            </span>
+            <span class="plus">+</span>
+            <span class="tool-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Gusto / ADP
+            </span>
+            <span class="plus">+</span>
+            <span class="tool-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Avalara
+            </span>
+            <span class="plus">+</span>
+            <span class="tool-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              Spreadsheets
+            </span>
+            <span class="plus">+</span>
+            <span class="tool-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </span>
+            <span class="plus">+</span>
+            <span class="tool-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Bill.com / Ramp
+            </span>
+          </div>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Each tool adds cost, complexity, and risk of error</p>
+        </div>
+
+        <!-- Pain Points -->
+        <div class="pain-grid">
+          <div class="pain-card reveal">
+            <div class="pain-number">01</div>
+            <h3>Tool Sprawl and Fragmentation</h3>
+            <p>Accounting, payroll, contracts, and budgeting are disconnected. Data lives in silos. Nothing talks to each other, creating manual reconciliation nightmares.</p>
+          </div>
+          <div class="pain-card reveal">
+            <div class="pain-number">02</div>
+            <h3>No Real-Time Visibility</h3>
+            <p>Business owners do not know job-level or location-level profitability until it is too late. Cash flow forecasts are built monthly in spreadsheets, not weekly with live data.</p>
+          </div>
+          <div class="pain-card reveal">
+            <div class="pain-number">03</div>
+            <h3>Payroll and Compliance Errors</h3>
+            <p>Overtime mistakes, contractor classification confusion, tax filing errors, and missing documentation. QuickBooks Payroll has been flagged for incorrect tax filings and duplicate payments.</p>
+          </div>
+          <div class="pain-card reveal">
+            <div class="pain-number">04</div>
+            <h3>Spreadsheet Dependency</h3>
+            <p>Forecasting, job costing, and budgeting are all done in manual spreadsheets. Budget vs. actual analysis is built outside the accounting system, creating version control chaos.</p>
+          </div>
+          <div class="pain-card reveal">
+            <div class="pain-number">05</div>
+            <h3>Billing Leakage and Cash Surprises</h3>
+            <p>Late invoices, unbilled time, vendor duplication, and margin compression. SMBs lose revenue they have already earned simply because invoicing is manual and inconsistent.</p>
+          </div>
+          <div class="pain-card reveal">
+            <div class="pain-number">06</div>
+            <h3>Pricing Creep and Add-On Fatigue</h3>
+            <p>Tools start cheap but scale poorly. QuickBooks at $30/mo becomes $200+ with payroll, tax, and reporting add-ons. Each vendor raises prices independently.</p>
+          </div>
+        </div>
+
+        <!-- Impact stats -->
+        <div class="grid-3 reveal" style="margin-top: 3rem;">
+          <div class="stat-card">
+            <div class="stat-number" style="color: #E63946;" data-count="10" data-suffix="+ hrs">10+ hrs</div>
+            <div class="stat-label">per week lost to manual admin</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" style="color: #E63946;" data-count="5" data-suffix="-7 tools">5-7 tools</div>
+            <div class="stat-label">average SMB financial stack</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" style="color: #E63946;">$200<span data-count="200" data-suffix="+/mo">+/mo</span></div>
+            <div class="stat-label">stacked subscription costs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">Fintra<span class="logo-dot">.</span></a>
+        <p>The AI-native financial operating system for small and medium businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="solution.html">Solution</a></li>
+          <li><a href="differentiator.html">Why Fintra</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="problem.html">The Problem</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="contact.html">Get Early Access</a></li>
+          <li><a href="contact.html">Request Demo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Fintra. All rights reserved.</span>
+      <span>UT Dallas Capstone Project</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../js/three-scene.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
