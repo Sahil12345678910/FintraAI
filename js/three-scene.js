@@ -1,6 +1,6 @@
 // ============================================
 // Fintra - Three.js 3D Background
-// Floating financial elements with finance palette
+// Floating financial elements: dollar signs, coins, chart bars, arrows
 // ============================================
 
 class FintraScene {
@@ -48,10 +48,11 @@ class FintraScene {
     goldLight.position.set(15, -10, 10);
     this.scene.add(goldLight);
 
-    this.createFloatingCoins();
+    this.createDollarSigns();
+    this.createCoins();
     this.createChartBars();
+    this.createUpArrows();
     this.createParticles();
-    this.createGeometricAccents();
 
     window.addEventListener('resize', () => this.onResize());
     window.addEventListener('mousemove', (e) => this.onMouseMove(e));
@@ -59,17 +60,102 @@ class FintraScene {
     this.animate();
   }
 
-  createFloatingCoins() {
+  createDollarShape() {
+    const shape = new THREE.Shape();
+    // S curve of dollar sign
+    shape.moveTo(0.4, 0.8);
+    shape.bezierCurveTo(0.4, 1.0, 0.0, 1.0, -0.3, 0.85);
+    shape.bezierCurveTo(-0.5, 0.75, -0.5, 0.55, -0.2, 0.45);
+    shape.lineTo(0.2, 0.3);
+    shape.bezierCurveTo(0.5, 0.2, 0.5, -0.05, 0.2, -0.15);
+    shape.lineTo(-0.2, -0.3);
+    shape.bezierCurveTo(-0.5, -0.4, -0.5, -0.65, -0.2, -0.75);
+    shape.bezierCurveTo(0.0, -0.85, 0.4, -0.85, 0.4, -0.65);
+    // Close with a slight offset to make it look like an S
+    shape.lineTo(0.3, -0.65);
+    shape.bezierCurveTo(0.3, -0.75, 0.0, -0.75, -0.15, -0.65);
+    shape.bezierCurveTo(-0.35, -0.55, -0.35, -0.4, -0.15, -0.3);
+    shape.lineTo(0.25, -0.1);
+    shape.bezierCurveTo(0.6, 0.05, 0.6, 0.35, 0.25, 0.45);
+    shape.lineTo(-0.15, 0.55);
+    shape.bezierCurveTo(-0.4, 0.65, -0.4, 0.85, -0.15, 0.9);
+    shape.bezierCurveTo(0.1, 0.95, 0.3, 0.9, 0.3, 0.8);
+    return shape;
+  }
+
+  createDollarSigns() {
     const colors = [
       { main: 0x00C48C, edge: 0x33D4A4 },
-      { main: 0x0A2540, edge: 0x1A3A5C },
-      { main: 0x635BFF, edge: 0x8B85FF },
       { main: 0xFFB800, edge: 0xFFCB3D },
+      { main: 0x635BFF, edge: 0x8B85FF },
     ];
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 6; i++) {
       const colorSet = colors[i % colors.length];
-      const geometry = new THREE.CylinderGeometry(1.2, 1.2, 0.15, 24);
+      const group = new THREE.Group();
+
+      // Vertical line of dollar sign
+      const lineGeo = new THREE.BoxGeometry(0.08, 2.2, 0.08);
+      const lineMat = new THREE.MeshPhongMaterial({
+        color: colorSet.main,
+        transparent: true,
+        opacity: 0.25,
+      });
+      const line = new THREE.Mesh(lineGeo, lineMat);
+      group.add(line);
+
+      // S shape using a torus knot approximation
+      const sGeo = new THREE.TorusGeometry(0.5, 0.1, 8, 16, Math.PI);
+      const sMat = new THREE.MeshPhongMaterial({
+        color: colorSet.main,
+        transparent: true,
+        opacity: 0.2,
+        side: THREE.DoubleSide,
+      });
+      const sTop = new THREE.Mesh(sGeo, sMat);
+      sTop.position.y = 0.3;
+      sTop.rotation.z = Math.PI;
+      group.add(sTop);
+
+      const sBot = new THREE.Mesh(sGeo, sMat.clone());
+      sBot.position.y = -0.3;
+      group.add(sBot);
+
+      group.position.set(
+        (Math.random() - 0.5) * 50,
+        (Math.random() - 0.5) * 35,
+        (Math.random() - 0.5) * 25 - 5
+      );
+      group.rotation.set(
+        Math.random() * 0.3,
+        Math.random() * Math.PI,
+        Math.random() * 0.3
+      );
+
+      group.userData = {
+        type: 'float',
+        baseY: group.position.y,
+        speed: Math.random() * 0.4 + 0.2,
+        amplitude: Math.random() * 2 + 1,
+        rotSpeed: (Math.random() - 0.5) * 0.008,
+        phase: Math.random() * Math.PI * 2,
+      };
+
+      this.objects.push(group);
+      this.scene.add(group);
+    }
+  }
+
+  createCoins() {
+    const colors = [
+      { main: 0xFFB800, edge: 0xFFCB3D },
+      { main: 0x00C48C, edge: 0x33D4A4 },
+      { main: 0x0A2540, edge: 0x1A3A5C },
+    ];
+
+    for (let i = 0; i < 5; i++) {
+      const colorSet = colors[i % colors.length];
+      const geometry = new THREE.CylinderGeometry(1.0, 1.0, 0.12, 24);
       const material = new THREE.MeshPhongMaterial({
         color: colorSet.main,
         transparent: true,
@@ -80,8 +166,21 @@ class FintraScene {
 
       const coin = new THREE.Mesh(geometry, material);
 
-      // Add edge ring
-      const ringGeo = new THREE.TorusGeometry(1.2, 0.04, 8, 24);
+      // Inner circle on coin face
+      const innerGeo = new THREE.RingGeometry(0.4, 0.6, 24);
+      const innerMat = new THREE.MeshBasicMaterial({
+        color: colorSet.edge,
+        transparent: true,
+        opacity: 0.15,
+        side: THREE.DoubleSide,
+      });
+      const inner = new THREE.Mesh(innerGeo, innerMat);
+      inner.rotation.x = Math.PI / 2;
+      inner.position.y = 0.07;
+      coin.add(inner);
+
+      // Edge ring
+      const ringGeo = new THREE.TorusGeometry(1.0, 0.03, 8, 24);
       const ringMat = new THREE.MeshBasicMaterial({
         color: colorSet.edge,
         transparent: true,
@@ -108,7 +207,7 @@ class FintraScene {
         baseY: coin.position.y,
         speed: Math.random() * 0.4 + 0.2,
         amplitude: Math.random() * 2 + 1,
-        rotSpeed: (Math.random() - 0.5) * 0.01,
+        rotSpeed: (Math.random() - 0.5) * 0.012,
         phase: Math.random() * Math.PI * 2,
       };
 
@@ -118,50 +217,108 @@ class FintraScene {
   }
 
   createChartBars() {
-    const colors = [0x00C48C, 0x635BFF, 0x0A2540, 0xFFB800];
+    // Group of 3-4 bars that look like a mini bar chart
+    for (let g = 0; g < 3; g++) {
+      const group = new THREE.Group();
+      const barCount = 3 + Math.floor(Math.random() * 2);
+      const colors = [0x00C48C, 0x635BFF, 0xFFB800, 0x0A2540];
 
-    for (let i = 0; i < 5; i++) {
-      const height = Math.random() * 2 + 0.5;
-      const geometry = new THREE.BoxGeometry(0.5, height, 0.5);
-      const material = new THREE.MeshPhongMaterial({
-        color: colors[i % colors.length],
-        transparent: true,
-        opacity: 0.15,
-        shininess: 60,
-      });
+      for (let i = 0; i < barCount; i++) {
+        const height = Math.random() * 1.5 + 0.5;
+        const geometry = new THREE.BoxGeometry(0.35, height, 0.35);
+        const material = new THREE.MeshPhongMaterial({
+          color: colors[i % colors.length],
+          transparent: true,
+          opacity: 0.18,
+          shininess: 60,
+        });
 
-      const bar = new THREE.Mesh(geometry, material);
+        const bar = new THREE.Mesh(geometry, material);
+        bar.position.x = i * 0.5 - (barCount * 0.25);
+        bar.position.y = height / 2 - 0.5;
 
-      const edges = new THREE.EdgesGeometry(geometry);
-      const edgeMat = new THREE.LineBasicMaterial({
-        color: colors[i % colors.length],
-        transparent: true,
-        opacity: 0.25,
-      });
-      bar.add(new THREE.LineSegments(edges, edgeMat));
+        const edges = new THREE.EdgesGeometry(geometry);
+        const edgeMat = new THREE.LineBasicMaterial({
+          color: colors[i % colors.length],
+          transparent: true,
+          opacity: 0.25,
+        });
+        bar.add(new THREE.LineSegments(edges, edgeMat));
+        group.add(bar);
+      }
 
-      bar.position.set(
+      group.position.set(
         (Math.random() - 0.5) * 50,
         (Math.random() - 0.5) * 35,
         (Math.random() - 0.5) * 25 - 5
       );
 
-      bar.userData = {
-        type: 'bar',
-        baseY: bar.position.y,
+      group.userData = {
+        type: 'float',
+        baseY: group.position.y,
         speed: Math.random() * 0.3 + 0.15,
         amplitude: Math.random() * 1.5 + 0.5,
         rotSpeed: (Math.random() - 0.5) * 0.005,
         phase: Math.random() * Math.PI * 2,
       };
 
-      this.objects.push(bar);
-      this.scene.add(bar);
+      this.objects.push(group);
+      this.scene.add(group);
+    }
+  }
+
+  createUpArrows() {
+    const colors = [0x00C48C, 0x635BFF, 0xFFB800];
+
+    for (let i = 0; i < 4; i++) {
+      const group = new THREE.Group();
+      const color = colors[i % colors.length];
+
+      // Arrow shaft
+      const shaftGeo = new THREE.BoxGeometry(0.12, 1.2, 0.12);
+      const shaftMat = new THREE.MeshPhongMaterial({
+        color: color,
+        transparent: true,
+        opacity: 0.2,
+      });
+      const shaft = new THREE.Mesh(shaftGeo, shaftMat);
+      shaft.position.y = -0.2;
+      group.add(shaft);
+
+      // Arrow head (cone)
+      const headGeo = new THREE.ConeGeometry(0.3, 0.5, 4);
+      const headMat = new THREE.MeshPhongMaterial({
+        color: color,
+        transparent: true,
+        opacity: 0.25,
+      });
+      const head = new THREE.Mesh(headGeo, headMat);
+      head.position.y = 0.6;
+      group.add(head);
+
+      group.position.set(
+        (Math.random() - 0.5) * 50,
+        (Math.random() - 0.5) * 35,
+        (Math.random() - 0.5) * 25 - 5
+      );
+
+      group.rotation.z = (Math.random() - 0.5) * 0.5;
+
+      group.userData = {
+        type: 'arrow',
+        basePos: group.position.clone(),
+        speed: Math.random() * 0.5 + 0.2,
+        radius: Math.random() * 2 + 1,
+        phase: Math.random() * Math.PI * 2,
+      };
+
+      this.objects.push(group);
+      this.scene.add(group);
     }
   }
 
   createParticles() {
-    const count = 600;
+    const count = 500;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
@@ -192,57 +349,12 @@ class FintraScene {
       size: 0.1,
       vertexColors: true,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.3,
       sizeAttenuation: true,
     });
 
     this.particles = new THREE.Points(geometry, material);
     this.scene.add(this.particles);
-  }
-
-  createGeometricAccents() {
-    const items = [
-      { type: 'diamond', color: 0x00C48C },
-      { type: 'ring', color: 0x635BFF },
-      { type: 'diamond', color: 0xFFB800 },
-      { type: 'ring', color: 0x0A2540 },
-      { type: 'diamond', color: 0x635BFF },
-      { type: 'ring', color: 0x00C48C },
-    ];
-
-    items.forEach((item) => {
-      let geo;
-      if (item.type === 'diamond') {
-        geo = new THREE.OctahedronGeometry(0.4, 0);
-      } else {
-        geo = new THREE.TorusGeometry(0.3, 0.08, 8, 16);
-      }
-
-      const mat = new THREE.MeshBasicMaterial({
-        color: item.color,
-        transparent: true,
-        opacity: 0.2,
-        side: THREE.DoubleSide,
-      });
-
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.set(
-        (Math.random() - 0.5) * 50,
-        (Math.random() - 0.5) * 40,
-        (Math.random() - 0.5) * 20
-      );
-
-      mesh.userData = {
-        type: 'accent',
-        basePos: mesh.position.clone(),
-        speed: Math.random() * 0.5 + 0.2,
-        radius: Math.random() * 3 + 1,
-        phase: Math.random() * Math.PI * 2,
-      };
-
-      this.objects.push(mesh);
-      this.scene.add(mesh);
-    });
   }
 
   onMouseMove(event) {
@@ -268,16 +380,16 @@ class FintraScene {
 
     this.objects.forEach((obj) => {
       const d = obj.userData;
-      if (d.type === 'coin' || d.type === 'bar') {
+      if (d.type === 'float' || d.type === 'coin') {
         obj.position.y = d.baseY + Math.sin(elapsed * d.speed + d.phase) * d.amplitude;
         obj.rotation.y += d.rotSpeed;
         if (d.type === 'coin') {
           obj.rotation.x += d.rotSpeed * 0.3;
         }
-      } else if (d.type === 'accent') {
-        obj.position.x = d.basePos.x + Math.sin(elapsed * d.speed + d.phase) * d.radius;
-        obj.position.y = d.basePos.y + Math.cos(elapsed * d.speed * 0.7 + d.phase) * d.radius * 0.6;
-        obj.rotation.z = elapsed * d.speed;
+      } else if (d.type === 'arrow') {
+        obj.position.x = d.basePos.x + Math.sin(elapsed * d.speed + d.phase) * d.radius * 0.5;
+        obj.position.y = d.basePos.y + Math.cos(elapsed * d.speed * 0.7 + d.phase) * d.radius;
+        obj.rotation.z = Math.sin(elapsed * d.speed * 0.3) * 0.15;
       }
     });
 
